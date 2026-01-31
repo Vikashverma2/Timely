@@ -1,96 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Flip Timer Design System - Dark theme with warm amber accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 20% 10%;
+    --foreground: 40 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 18% 14%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 18% 14%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 38 92% 55%;
+    --primary-foreground: 220 20% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 40 20% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 70% 45%;
+    --accent-foreground: 40 20% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 38 92% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom timer variables */
+    --timer-digit-bg: 220 18% 12%;
+    --timer-digit-border: 220 15% 25%;
+    --timer-digit-text: 38 92% 55%;
+    --timer-digit-shadow: 0 10px 40px -10px hsl(38 92% 55% / 0.3);
+    --timer-flip-line: 220 20% 8%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(38, 92%, 55%), hsl(45, 90%, 60%));
+    --gradient-card: linear-gradient(180deg, hsl(220, 18%, 16%), hsl(220, 18%, 12%));
+    --gradient-glass: linear-gradient(135deg, hsl(220, 18%, 18% / 0.8), hsl(220, 18%, 12% / 0.9));
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 18% 14%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 38 92% 55%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 38 92% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 10%;
+    --foreground: 40 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 18% 14%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 18% 14%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 38 92% 55%;
+    --primary-foreground: 220 20% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 40 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 70% 45%;
+    --accent-foreground: 40 20% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 38 92% 55%;
   }
 }
 
@@ -100,6 +97,140 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Flip card styles */
+  .flip-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .flip-digit {
+    @apply relative overflow-hidden rounded-lg;
+    background: var(--gradient-card);
+    box-shadow: var(--timer-digit-shadow),
+                inset 0 1px 0 hsl(var(--timer-digit-border)),
+                0 4px 20px -4px hsl(220 20% 5% / 0.5);
+  }
+
+  .flip-digit::before {
+    content: '';
+    @apply absolute left-0 right-0 h-px z-10;
+    top: 50%;
+    background: hsl(var(--timer-flip-line));
+    box-shadow: 0 1px 2px hsl(220 20% 5% / 0.5);
+  }
+
+  .flip-digit-text {
+    font-family: 'Bebas Neue', sans-serif;
+    color: hsl(var(--timer-digit-text));
+    text-shadow: 0 0 30px hsl(38 92% 55% / 0.4);
+  }
+
+  .flip-upper, .flip-lower {
+    @apply overflow-hidden relative;
+    backface-visibility: hidden;
+  }
+
+  .flip-upper {
+    @apply rounded-t-lg;
+    background: linear-gradient(180deg, hsl(220, 18%, 16%), hsl(220, 18%, 14%));
+  }
+
+  .flip-lower {
+    @apply rounded-b-lg;
+    background: linear-gradient(180deg, hsl(220, 18%, 13%), hsl(220, 18%, 11%));
+  }
+
+  /* Flip animation */
+  @keyframes flip-top {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(-90deg);
+    }
+  }
+
+  @keyframes flip-bottom {
+    0% {
+      transform: rotateX(90deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+
+  .flip-animate-top {
+    animation: flip-top 0.3s ease-in forwards;
+    transform-origin: bottom center;
+  }
+
+  .flip-animate-bottom {
+    animation: flip-bottom 0.3s ease-out 0.3s forwards;
+    transform-origin: top center;
+  }
+
+  /* Glow effect */
+  .timer-glow {
+    box-shadow: 0 0 60px hsl(38 92% 55% / 0.15),
+                0 0 100px hsl(38 92% 55% / 0.1);
+  }
+
+  /* Glass morphism */
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Button variants */
+  .btn-timer {
+    @apply relative overflow-hidden;
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+  }
+
+  .btn-timer:hover {
+    box-shadow: 0 10px 40px -10px hsl(38 92% 55% / 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-timer:active {
+    transform: translateY(0);
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  /* Pulse glow */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 60px hsl(38 92% 55% / 0.15);
+    }
+    50% {
+      box-shadow: 0 0 80px hsl(38 92% 55% / 0.25);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 }
