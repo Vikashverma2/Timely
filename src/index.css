@@ -7,59 +7,64 @@
 /* Flip Timer Design System - Dark theme with warm amber accents */
 
 @layer base {
+
+  /* Light Theme (New - Matching Amber Style) */
   :root {
-    --background: 220 20% 10%;
-    --foreground: 40 20% 95%;
+    --background: 40 20% 98%;
+    /* Warm white to match Amber vibe */
+    --foreground: 220 20% 10%;
 
-    --card: 220 18% 14%;
-    --card-foreground: 40 20% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 220 18% 14%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 38 92% 55%;
+    --primary: 38 92% 50%;
+    /* Original Amber, matched for light bg */
     --primary-foreground: 220 20% 10%;
 
-    --secondary: 220 15% 20%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 40 20% 96%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 40 20% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 38 70% 45%;
-    --accent-foreground: 40 20% 95%;
+    --accent: 38 70% 50%;
+    --accent-foreground: 220 20% 10%;
 
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 220 15% 22%;
-    --input: 220 15% 22%;
-    --ring: 38 92% 55%;
+    --border: 40 15% 90%;
+    --input: 40 15% 90%;
+    --ring: 38 92% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom timer variables */
-    --timer-digit-bg: 220 18% 12%;
-    --timer-digit-border: 220 15% 25%;
-    --timer-digit-text: 38 92% 55%;
-    --timer-digit-shadow: 0 10px 40px -10px hsl(38 92% 55% / 0.3);
-    --timer-flip-line: 220 20% 8%;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(38, 92%, 55%), hsl(45, 90%, 60%));
-    --gradient-card: linear-gradient(180deg, hsl(220, 18%, 16%), hsl(220, 18%, 12%));
-    --gradient-glass: linear-gradient(135deg, hsl(220, 18%, 18% / 0.8), hsl(220, 18%, 12% / 0.9));
+    /* Custom timer variables - Light */
+    --timer-digit-bg: 40 20% 96%;
+    --timer-digit-border: 40 15% 90%;
+    --timer-digit-text: 38 92% 45%;
+    --timer-digit-shadow: 0 10px 30px -5px hsl(38 92% 50% / 0.2);
+    --timer-flip-line: 40 15% 90%;
 
-    --sidebar-background: 220 18% 14%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 38 92% 55%;
-    --sidebar-primary-foreground: 220 20% 10%;
-    --sidebar-accent: 220 15% 20%;
-    --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 220 15% 22%;
-    --sidebar-ring: 38 92% 55%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(38, 92%, 50%), hsl(45, 90%, 55%));
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(40, 20%, 97%));
+    --gradient-glass: linear-gradient(135deg, hsl(0, 0%, 100% / 0.8), hsl(40, 20%, 97% / 0.9));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 240 10% 3.9%;
   }
 
+  /* Dark Theme (Original - EXACT COPY of previous :root) */
   .dark {
     --background: 220 20% 10%;
     --foreground: 40 20% 95%;
@@ -88,6 +93,18 @@
     --border: 220 15% 22%;
     --input: 220 15% 22%;
     --ring: 38 92% 55%;
+
+    /* Custom timer variables */
+    --timer-digit-bg: 220 18% 12%;
+    --timer-digit-border: 220 15% 25%;
+    --timer-digit-text: 38 92% 55%;
+    --timer-digit-shadow: 0 10px 40px -10px hsl(38 92% 55% / 0.3);
+    --timer-flip-line: 220 20% 8%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(38, 92%, 55%), hsl(45, 90%, 60%));
+    --gradient-card: linear-gradient(180deg, hsl(220, 18%, 16%), hsl(220, 18%, 12%));
+    --gradient-glass: linear-gradient(135deg, hsl(220, 18%, 18% / 0.8), hsl(220, 18%, 12% / 0.9));
   }
 }
 
@@ -103,6 +120,7 @@
 }
 
 @layer components {
+
   /* Flip card container */
   .flip-card {
     perspective: 2000px;
@@ -113,7 +131,7 @@
   .flip-digit {
     @apply relative rounded-2xl;
     background: linear-gradient(180deg, hsl(220, 20%, 15%), hsl(220, 20%, 11%));
-    box-shadow: 
+    box-shadow:
       0 20px 60px -15px hsl(220 20% 5% / 0.8),
       0 0 0 1px hsl(220, 15%, 20%),
       inset 0 1px 0 hsl(220, 15%, 22%);
@@ -122,7 +140,7 @@
   .flip-digit-text {
     font-family: 'Bebas Neue', sans-serif;
     color: hsl(var(--timer-digit-text));
-    text-shadow: 
+    text-shadow:
       0 0 40px hsl(38 92% 55% / 0.5),
       0 0 80px hsl(38 92% 55% / 0.3);
     letter-spacing: 0.02em;
@@ -185,6 +203,7 @@
     0% {
       transform: rotateX(0deg);
     }
+
     100% {
       transform: rotateX(-90deg);
     }
@@ -194,6 +213,7 @@
     0% {
       transform: rotateX(90deg);
     }
+
     100% {
       transform: rotateX(0deg);
     }
@@ -241,6 +261,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -253,9 +274,12 @@
 
   /* Pulse glow for completed state */
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       filter: drop-shadow(0 0 80px hsl(38 92% 55% / 0.2));
     }
+
     50% {
       filter: drop-shadow(0 0 120px hsl(38 92% 55% / 0.35));
     }
@@ -269,11 +293,9 @@
   .flip-digit::after {
     content: '';
     @apply absolute inset-0 rounded-2xl pointer-events-none;
-    background: linear-gradient(
-      135deg,
-      hsl(0 0% 100% / 0.05) 0%,
-      transparent 50%,
-      transparent 100%
-    );
+    background: linear-gradient(135deg,
+        hsl(0 0% 100% / 0.05) 0%,
+        transparent 50%,
+        transparent 100%);
   }
 }

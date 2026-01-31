@@ -34,20 +34,20 @@ const Separator = ({ size = "xl" }: { size?: "sm" | "md" | "lg" | "xl" }) => {
   );
 };
 
-const TimerDisplay = ({ 
-  days, 
-  hours, 
-  minutes, 
-  seconds, 
+const TimerDisplay = ({
+  days,
+  hours,
+  minutes,
+  seconds,
   showDays = false,
   size = "xl",
-  className 
+  className
 }: TimerDisplayProps) => {
   const gapClasses = {
     sm: "gap-3",
     md: "gap-4 md:gap-6",
     lg: "gap-4 md:gap-6 lg:gap-8",
-    xl: "gap-4 md:gap-6 lg:gap-8 xl:gap-10",
+    xl: "gap-4 md:gap-6 lg:gap-8 xl:gap-8 2xl:gap-10",
   };
 
   return (

@@ -17,7 +17,7 @@ const FlipDigit = ({ value, size = "xl" }: FlipDigitProps) => {
       setPreviousValue(displayValue);
       setIsFlipping(true);
       flipKey.current += 1;
-      
+
       const timer = setTimeout(() => {
         setDisplayValue(value);
       }, 300);
@@ -37,7 +37,7 @@ const FlipDigit = ({ value, size = "xl" }: FlipDigitProps) => {
     sm: "w-12 h-16 text-3xl",
     md: "w-16 h-24 text-5xl md:w-20 md:h-28 md:text-6xl",
     lg: "w-20 h-28 text-6xl md:w-28 md:h-40 md:text-7xl lg:w-32 lg:h-48 lg:text-8xl",
-    xl: "w-20 h-28 text-6xl md:w-28 md:h-40 md:text-7xl lg:w-36 lg:h-52 lg:text-8xl xl:w-44 xl:h-64 xl:text-9xl",
+    xl: "w-20 h-28 text-6xl md:w-28 md:h-40 md:text-7xl lg:w-36 lg:h-52 lg:text-8xl xl:w-36 xl:h-52 xl:text-8xl 2xl:w-44 2xl:h-64 2xl:text-9xl",
   };
 
   const textOffsets = {

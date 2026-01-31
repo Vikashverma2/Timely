@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Clock, Timer, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import ThemeToggle from "./ThemeToggle";
+
 interface TimerSetupProps {
   onStart: (days: number, hours: number, minutes: number, seconds: number) => void;
 }
@@ -36,7 +38,10 @@ const TimerSetup = ({ onStart }: TimerSetupProps) => {
   );
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-8 animate-fade-in-up">
+    <div className="w-full max-w-md mx-auto space-y-8 animate-fade-in-up relative">
+      <div className="absolute -top-12 right-0 md:top-0 md:right-0">
+        <ThemeToggle />
+      </div>
       {/* Header */}
       <div className="text-center space-y-2">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
@@ -136,7 +141,7 @@ const TimerSetup = ({ onStart }: TimerSetupProps) => {
       </div>
 
       {/* Start button */}
-      <Button 
+      <Button
         onClick={handleStart}
         className="w-full h-14 text-lg font-semibold btn-timer rounded-xl"
         disabled={days === 0 && hours === 0 && minutes === 0 && seconds === 0}

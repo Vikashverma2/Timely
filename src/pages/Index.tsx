@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Pause, Play, RotateCcw, Settings, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import ThemeToggle from "@/components/ThemeToggle";
+
 const Index = () => {
   const [isFullPage, setIsFullPage] = useState(false);
   const [showDays, setShowDays] = useState(false);
@@ -55,12 +57,15 @@ const Index = () => {
         </div>
 
         {/* Exit button */}
-        <button
-          onClick={handleReset}
-          className="absolute top-6 right-6 md:top-8 md:right-8 p-3 md:p-4 rounded-full bg-secondary/50 hover:bg-secondary border border-border/30 transition-all duration-300 group z-10"
-        >
-          <X className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
-        </button>
+        <div className="absolute top-6 right-6 md:top-8 md:right-8 z-10 flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            onClick={handleReset}
+            className="p-3 md:p-4 rounded-full bg-secondary/50 hover:bg-secondary border border-border/30 transition-all duration-300 group"
+          >
+            <X className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+          </button>
+        </div>
 
         {/* Timer status */}
         {timer.isComplete ? (
