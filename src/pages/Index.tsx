@@ -35,20 +35,18 @@ const Index = () => {
     }, 100);
   };
 
-  const handleReset = () => {
+  const handleExit = () => {
     timer.reset();
     setIsFullPage(false);
   };
 
-  // Request notification permission
-  if (typeof window !== "undefined" && "Notification" in window && Notification.permission === "default") {
-    Notification.requestPermission();
-  }
-
-  // Full page timer view
+  const handleRestart = () => {
+    timer.reset();
+    timer.start();
+  };
   if (isFullPage) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-8 md:px-8 md:py-12 relative overflow-hidden">
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center relative overflow-hidden w-full">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
@@ -60,7 +58,7 @@ const Index = () => {
         <div className="absolute top-6 right-6 md:top-8 md:right-8 z-10 flex items-center gap-3">
           <ThemeToggle />
           <button
-            onClick={handleReset}
+            onClick={handleExit}
             className="p-3 md:p-4 rounded-full bg-secondary/50 hover:bg-secondary border border-border/30 transition-all duration-300 group"
           >
             <X className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -69,14 +67,14 @@ const Index = () => {
 
         {/* Timer status */}
         {timer.isComplete ? (
-          <div className="text-center mb-6 md:mb-10 animate-fade-in-up">
+          <div className="text-center mb-6 md:mb-10 animate-fade-in-up relative z-10">
             <div className="inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary/20 border border-primary/30">
               <span className="text-2xl md:text-3xl">🎉</span>
               <span className="text-lg md:text-2xl text-primary font-semibold tracking-wide">Time's Up!</span>
             </div>
           </div>
         ) : timer.isPaused ? (
-          <div className="text-center mb-6 md:mb-10">
+          <div className="text-center mb-6 md:mb-10 relative z-10">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/50 border border-border/30">
               <Pause className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
               <span className="text-sm md:text-base text-muted-foreground font-medium">Paused</span>
@@ -86,7 +84,7 @@ const Index = () => {
 
         {/* Main timer display - HUGE */}
         <div className={cn(
-          "transition-all duration-500 relative z-10",
+          "transition-all duration-500 relative z-10 w-full flex justify-center px-1 md:px-4", // Added padding control
           timer.isComplete && "pulse-glow"
         )}>
           <TimerDisplay
@@ -96,11 +94,12 @@ const Index = () => {
             seconds={timer.seconds}
             showDays={showDays}
             size="xl"
+            className="max-w-full scale-75 md:scale-90 lg:scale-100 origin-center" // Scaling fix for smaller screens
           />
         </div>
 
         {/* Controls */}
-        <div className="mt-10 md:mt-16 flex items-center gap-4 md:gap-6 relative z-10">
+        <div className="mt-10 md:mt-16 flex items-center justify-center gap-4 md:gap-6 relative z-10 w-full px-4">
           {!timer.isComplete && (
             <>
               {timer.isPaused ? (
@@ -126,13 +125,13 @@ const Index = () => {
             </>
           )}
           <Button
-            onClick={handleReset}
+            onClick={handleRestart}
             size="lg"
             variant="outline"
             className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 border-border/50 hover:bg-secondary/50"
           >
             <RotateCcw className="w-5 h-5 md:w-6 md:h-6" />
-            New Timer
+            Reset Timer
           </Button>
         </div>
       </div>
