@@ -34,10 +34,10 @@ const FlipDigit = ({ value, size = "xl" }: FlipDigitProps) => {
   }, [value, displayValue]);
 
   const sizeClasses = {
-    sm: "w-14 h-20 text-4xl",
-    md: "w-20 h-28 text-6xl md:w-24 md:h-36 md:text-7xl",
-    lg: "w-24 h-36 text-7xl md:w-32 md:h-48 md:text-8xl lg:w-40 lg:h-56 lg:text-9xl",
-    xl: "w-28 h-40 text-8xl md:w-40 md:h-56 md:text-9xl lg:w-52 lg:h-72 lg:text-[10rem] xl:w-60 xl:h-80 xl:text-[12rem]",
+    sm: "w-12 h-16 text-3xl",
+    md: "w-16 h-24 text-5xl md:w-20 md:h-28 md:text-6xl",
+    lg: "w-20 h-28 text-6xl md:w-28 md:h-40 md:text-7xl lg:w-32 lg:h-48 lg:text-8xl",
+    xl: "w-20 h-28 text-6xl md:w-28 md:h-40 md:text-7xl lg:w-36 lg:h-52 lg:text-8xl xl:w-44 xl:h-64 xl:text-9xl",
   };
 
   const textOffsets = {

@@ -20,10 +20,10 @@ const FlipUnit = ({ value, label, size = "xl", showLabel = true }: FlipUnitProps
   };
 
   const labelClasses = {
-    sm: "text-[10px] mt-2",
-    md: "text-xs mt-3",
-    lg: "text-xs md:text-sm mt-4",
-    xl: "text-sm md:text-base lg:text-lg mt-4 md:mt-6",
+    sm: "text-[9px] mt-1.5",
+    md: "text-[10px] mt-2 md:text-xs md:mt-3",
+    lg: "text-xs mt-3 md:text-sm md:mt-4",
+    xl: "text-xs mt-3 md:text-sm md:mt-4 lg:text-base lg:mt-5",
   };
 
   return (
