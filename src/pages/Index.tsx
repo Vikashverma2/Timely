@@ -46,41 +46,42 @@ const Index = () => {
   // Full page timer view
   if (isFullPage) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 md:p-8 relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-[150px]" />
         </div>
 
         {/* Exit button */}
         <button
           onClick={handleReset}
-          className="absolute top-6 right-6 p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors group"
+          className="absolute top-6 right-6 md:top-8 md:right-8 p-3 md:p-4 rounded-full bg-secondary/50 hover:bg-secondary border border-border/30 transition-all duration-300 group z-10"
         >
-          <X className="w-5 h-5 text-muted-foreground group-hover:text-foreground" />
+          <X className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
         </button>
 
         {/* Timer status */}
         {timer.isComplete ? (
-          <div className="text-center mb-8 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/20 border border-primary/30 mb-4">
-              <span className="text-2xl">🎉</span>
-              <span className="text-lg text-primary font-semibold">Time's Up!</span>
+          <div className="text-center mb-6 md:mb-10 animate-fade-in-up">
+            <div className="inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary/20 border border-primary/30">
+              <span className="text-2xl md:text-3xl">🎉</span>
+              <span className="text-lg md:text-2xl text-primary font-semibold tracking-wide">Time's Up!</span>
             </div>
           </div>
         ) : timer.isPaused ? (
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/30">
-              <Pause className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">Paused</span>
+          <div className="text-center mb-6 md:mb-10">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/50 border border-border/30">
+              <Pause className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
+              <span className="text-sm md:text-base text-muted-foreground font-medium">Paused</span>
             </div>
           </div>
         ) : null}
 
-        {/* Main timer display */}
+        {/* Main timer display - HUGE */}
         <div className={cn(
-          "transition-all duration-500",
+          "transition-all duration-500 relative z-10",
           timer.isComplete && "pulse-glow"
         )}>
           <TimerDisplay
@@ -89,21 +90,21 @@ const Index = () => {
             minutes={timer.minutes}
             seconds={timer.seconds}
             showDays={showDays}
-            size="lg"
+            size="xl"
           />
         </div>
 
         {/* Controls */}
-        <div className="mt-12 flex items-center gap-4">
+        <div className="mt-10 md:mt-16 flex items-center gap-4 md:gap-6 relative z-10">
           {!timer.isComplete && (
             <>
               {timer.isPaused ? (
                 <Button
                   onClick={timer.resume}
                   size="lg"
-                  className="h-14 px-8 btn-timer rounded-xl gap-2"
+                  className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg btn-timer rounded-2xl gap-2 md:gap-3"
                 >
-                  <Play className="w-5 h-5" />
+                  <Play className="w-5 h-5 md:w-6 md:h-6" />
                   Resume
                 </Button>
               ) : (
@@ -111,9 +112,9 @@ const Index = () => {
                   onClick={timer.pause}
                   size="lg"
                   variant="secondary"
-                  className="h-14 px-8 rounded-xl gap-2"
+                  className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 border border-border/50"
                 >
-                  <Pause className="w-5 h-5" />
+                  <Pause className="w-5 h-5 md:w-6 md:h-6" />
                   Pause
                 </Button>
               )}
@@ -123,9 +124,9 @@ const Index = () => {
             onClick={handleReset}
             size="lg"
             variant="outline"
-            className="h-14 px-8 rounded-xl gap-2 border-border/50 hover:bg-secondary/50"
+            className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 border-border/50 hover:bg-secondary/50"
           >
-            <RotateCcw className="w-5 h-5" />
+            <RotateCcw className="w-5 h-5 md:w-6 md:h-6" />
             New Timer
           </Button>
         </div>
