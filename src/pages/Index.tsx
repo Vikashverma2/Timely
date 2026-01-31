@@ -46,7 +46,7 @@ const Index = () => {
   // Full page timer view
   if (isFullPage) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 md:p-8 relative overflow-hidden">
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-8 md:px-8 md:py-12 relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
