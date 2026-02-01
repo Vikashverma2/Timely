@@ -47,7 +47,7 @@ export const useTimer = ({
   const [isRunning, setIsRunning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
-  
+
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const days = Math.floor(totalSeconds / 86400);
@@ -63,12 +63,10 @@ export const useTimer = ({
   }, []);
 
   const start = useCallback(() => {
-    if (totalSeconds > 0) {
-      setIsRunning(true);
-      setIsPaused(false);
-      setIsComplete(false);
-    }
-  }, [totalSeconds]);
+    setIsRunning(true);
+    setIsPaused(false);
+    setIsComplete(false);
+  }, []);
 
   const pause = useCallback(() => {
     setIsPaused(true);

@@ -71,13 +71,31 @@ const TimerSetup = ({ onStart }: TimerSetupProps) => {
               "flex flex-col items-center gap-1 p-3 rounded-xl",
               "bg-secondary/30 border border-border/30",
               "hover:bg-secondary/50 hover:border-primary/30",
+              // Selected state styles
+              days === 0 &&
+              hours === Math.floor(timer.minutes / 60) &&
+              minutes === (timer.minutes % 60) &&
+              seconds === 0 &&
+              "border-primary bg-secondary/80 shadow-[0_0_15px_rgba(var(--primary),0.15)]",
               "transition-all duration-200 group"
             )}
           >
-            <span className="text-lg group-hover:scale-110 transition-transform">
+            <span className={cn(
+              "text-lg transition-transform",
+              days === 0 &&
+                hours === Math.floor(timer.minutes / 60) &&
+                minutes === (timer.minutes % 60) &&
+                seconds === 0 ? "scale-110" : "group-hover:scale-110"
+            )}>
               {timer.icon}
             </span>
-            <span className="text-xs text-muted-foreground group-hover:text-foreground">
+            <span className={cn(
+              "text-xs transition-colors",
+              days === 0 &&
+                hours === Math.floor(timer.minutes / 60) &&
+                minutes === (timer.minutes % 60) &&
+                seconds === 0 ? "text-foreground font-medium" : "text-muted-foreground group-hover:text-foreground"
+            )}>
               {timer.label}
             </span>
           </button>
