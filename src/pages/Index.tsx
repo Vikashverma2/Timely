@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import TimerDisplay from "@/components/TimerDisplay";
 import TimerSetup from "@/components/TimerSetup";
 import { useTimer } from "@/hooks/useTimer";
@@ -26,13 +26,17 @@ const Index = () => {
 
   const timer = useTimer({ onComplete: handleComplete });
 
-  const handleStart = (days: number, hours: number, minutes: number, seconds: number) => {
-    timer.setTime(days, hours, minutes, seconds);
-    setShowDays(days > 0);
-    setTimeout(() => {
-      timer.start();
+  useEffect(() => {
+    if (timer.isRunning || timer.isPaused || (timer.isComplete && timer.totalSeconds === 0)) {
       setIsFullPage(true);
-    }, 100);
+      setShowDays(timer.days > 0);
+    }
+  }, []); // Run once on mount to restore view state
+
+  const handleStart = (days: number, hours: number, minutes: number, seconds: number) => {
+    timer.setTime(days, hours, minutes, seconds, true);
+    setShowDays(days > 0);
+    setIsFullPage(true);
   };
 
   const handleExit = () => {
