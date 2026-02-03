@@ -98,7 +98,12 @@ const Index = () => {
             seconds={timer.seconds}
             showDays={showDays}
             size="xl"
-            className="max-w-full scale-75 md:scale-90 lg:scale-100 origin-center" // Scaling fix for smaller screens
+            className={cn(
+              "max-w-full origin-center transition-transform duration-300",
+              showDays
+                ? "scale-[0.45] sm:scale-50 md:scale-75 lg:scale-85"
+                : "scale-75 md:scale-90 lg:scale-100"
+            )}
           />
         </div>
 
