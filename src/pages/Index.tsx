@@ -124,10 +124,9 @@ const Index = () => {
                 <Button
                   onClick={timer.pause}
                   size="lg"
-                  variant="secondary"
-                  className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 border border-border/50"
+                  className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 btn-dark-glass text-primary hover:text-primary"
                 >
-                  <Pause className="w-5 h-5 md:w-6 md:h-6" />
+                  <Pause className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   Pause
                 </Button>
               )}
@@ -136,10 +135,9 @@ const Index = () => {
           <Button
             onClick={handleRestart}
             size="lg"
-            variant="outline"
-            className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 border-border/50 hover:bg-secondary/50"
+            className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg rounded-2xl gap-2 md:gap-3 btn-dark-glass text-primary hover:text-primary"
           >
-            <RotateCcw className="w-5 h-5 md:w-6 md:h-6" />
+            <RotateCcw className="w-5 h-5 md:w-6 md:h-6 text-primary" />
             Reset Timer
           </Button>
         </div>
