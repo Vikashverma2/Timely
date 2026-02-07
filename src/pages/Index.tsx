@@ -18,7 +18,7 @@ const Index = () => {
       if (Notification.permission === "granted") {
         new Notification("Timer Complete!", {
           body: "Your countdown has finished!",
-          icon: "/favicon.ico",
+          icon: "/favicon.png",
         });
       }
     }
