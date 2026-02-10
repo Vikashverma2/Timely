@@ -27,7 +27,7 @@ The application focuses on simplicity, visual clarity, and immersion — making 
 
 - React JS
 - Tailwind CSS
-- 
+  
 ## Screenshots
 
 ![Main Page](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTEwtds1RXQBW8GHbU-1tFnXspD7vutyWZj28JeNqZXqEykxxYf50SoXDFvBubxX_YJbfj7ht05Pmad_2tK14YBVYLr9dBhmXrahljwGg7-lO7Mo4mQBeu-ePJULzIMCId1mz26TdNk-N9ItVyRmWS9i8RJtr0ZzLK7Q9JhDrIqADB6LuF5qRcIaWRP2yI/s1908/Screenshot_11-2-2026_02026_localhost.jpeg)
@@ -37,7 +37,6 @@ The application focuses on simplicity, visual clarity, and immersion — making 
 ![Timer Dash](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMLys-MdrCg7x1k1jU5NHUcjeMC79TtVJMokGXbCP5PBOtNtPwn6JN8za3tOrXKYeoK7Hf67gzzclZ-rURh7BppYctfiGWbCIv5wXjuGsABrl-t31BQZiMLpI87j5eKevwhV3yBRRrcvpob3lhmsy0qi8xulh6g6KtMykT-W4oqXkHLB8pgpXxoZyQFSLl/s1913/Screenshot_11-2-2026_02042_localhost.jpeg)
 
 
-- 
 ## Links
 
 - 🚀 [Live Demo](https://timely-akkb.onrender.com)
