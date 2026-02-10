@@ -7,6 +7,7 @@ import { Pause, Play, RotateCcw, Settings, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import ThemeToggle from "@/components/ThemeToggle";
+import Footer from "@/components/Footer";
 
 const Index = () => {
     const [isFullPage, setIsFullPage] = useState(false);
@@ -181,6 +182,9 @@ const Index = () => {
                             size="md"
                         />
                     </div>
+                </div>
+                <div className="absolute bottom-4 left-0 w-full z-10 opacity-70">
+                    <Footer />
                 </div>
             </div>
 
