@@ -1,73 +1,47 @@
-# Welcome to your Lovable project
+# ⏱️ Timely Focus
 
-## Project info
+ Focus is a minimalist and modern focus timer designed to help you stay productive through a clean, distraction-free experience.
+It features a smooth flip clock animation inspired by retro time displays, combined with modern UI and performance.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The application focuses on simplicity, visual clarity, and immersion — making it ideal for deep work, study sessions, and time-boxed productivity.
 
-## How can I edit this code?
+ ## ✨ Key Highlights
 
-There are several ways of editing your application.
+- Beautiful flip-style clock animation for time transitions
+- Full-screen distraction-free focus mode
+- Clean and modern UI with dark and light themes
+- Responsive design for desktop and mobile devices
+- Lightweight, fast, and optimized for focus
+- 
+## 📁 Features
 
-**Use Lovable**
+- ⏳ Custom Focus Timer – Set and start focused work sessions
+- 🔄 Flip Clock Animation – Smooth, retro-inspired time transitions
+- 🎨 Theme Support – Dark (Amber/Orange) and Light modes
+- 📱 Responsive Design – Works seamlessly across all screen sizes
+- 🔔 Browser Notifications – Alerts when the timer completes
+- 🖥️ Full-Screen Mode – Immersive experience with zero distractions
+- 📊 Visual Time Progress – Subtle visual cues as time passes
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## ⚙️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
+- React JS
 - Tailwind CSS
+- 
+## Screenshots
 
-## How can I deploy this project?
+![Main Page](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTEwtds1RXQBW8GHbU-1tFnXspD7vutyWZj28JeNqZXqEykxxYf50SoXDFvBubxX_YJbfj7ht05Pmad_2tK14YBVYLr9dBhmXrahljwGg7-lO7Mo4mQBeu-ePJULzIMCId1mz26TdNk-N9ItVyRmWS9i8RJtr0ZzLK7Q9JhDrIqADB6LuF5qRcIaWRP2yI/s1908/Screenshot_11-2-2026_02026_localhost.jpeg)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+-------
 
-## Can I connect a custom domain to my Lovable project?
+![Timer Dash](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMLys-MdrCg7x1k1jU5NHUcjeMC79TtVJMokGXbCP5PBOtNtPwn6JN8za3tOrXKYeoK7Hf67gzzclZ-rURh7BppYctfiGWbCIv5wXjuGsABrl-t31BQZiMLpI87j5eKevwhV3yBRRrcvpob3lhmsy0qi8xulh6g6KtMykT-W4oqXkHLB8pgpXxoZyQFSLl/s1913/Screenshot_11-2-2026_02042_localhost.jpeg)
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- 
+## Links
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- 🚀 [Live Demo](https://timely-akkb.onrender.com)
+
+
+
+
